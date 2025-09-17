@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+      <link rel="stylesheet" href="Task1.css">
+    </head>
+    <body>
+       <form action="submit" id="submitForm">
+         <h1 id="title">Quran Education Admisson Form</h1>
+        <hr>
+
+             <div id="emaildob">
+         <h2 id="dob">First Name</h2>
+        <h2 id="email">Last Name</h2>
+     </div>
+          <div id="label"><br>
+      <!-- <label for="fn" id="fnl">First Name </label>
+       <label for="ln" id="lnl">Last Name </label> -->
+      <div id="name">
+       
+      <input type="text" id="fn">
+      <input type="text" id="ln">
+    
+      </div>
+       
+     
+      
+
+    </div>
+     <img id="img" src="E:\OfficeTask\image.jpeg" alt=""> 
+    
+     <div id="emaildob">
+         <h2 id="dob">Date Of Birth</h2>
+        <h2 id="email">Email</h2>
+     </div>
+    <div id="dob">
+       
+        <input type="date" id="date">
+        <div>
+           
+            <input type="email" id="em">
+            <br>
+            <label for="em">example@gmail.com</label>
+        </div>
+    </div>
+    <div><h2 id="gender">Gender</h2>
+        <select name="gender" id="genderOption">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select></div>
+   
+        <div class="addrph">
+         <h2 id="adr">Address</h2>
+          <h2 id="phone">Phone Number</h2>
+        </div>
+        
+        <div class="address">
+        <textarea id="add"></textarea>
+         <input type="tel" placeholder="+92 3** *******" id="ph" >
+        </div>
+   <audio src="E:\OfficeTask\WhatsApp Audio 2025-09-15 at 5.10.09 PM.mpeg" controls id="audio"></audio>
+
+         <video src="E:\OfficeTask\Screen Recording 2025-02-10 175103.mp4" id="video" controls width="25%" height="25%"></video>
+        
+        <table id="table">
+          <thead id="thead">
+           <tr> <th>FirstName</th>
+            <th>LastName</th>
+            <th>DOB</th>
+            <th>EMAIL</th>
+            <th>Adress</th></tr>
+          </thead>
+          <tbody id="">
+           <tr>
+              <td></td>
+            <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+           </tr>
+           <tr>
+             <td></td>
+            <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+           </tr>
+              <tr>
+             <td></td>
+            <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+           </tr>
+              <tr>
+             <td></td>
+            <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+           </tr>
+              <tr>
+             <td></td>
+            <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+           </tr>
+         </tbody>
+        </table>
+
+     
+
+       </form>
+          <div class="center">
+                 <button id="submit" onclick="SaveData()">Submit</button>
+
+        </div>
+       <script>
+      function SaveData()
+      {
+        const FirstName=document.getElementById('fn').value;
+        const LastName=document.getElementById('ln').value;
+        const dob=document.getElementById('date').value;
+        const email=document.getElementById('em').value;
+        const gender=document.getElementById('genderOption');
+        const address=document.getElementById('add');
+        const phone=document.getElementById('ph');
+    
+      
+      const userData={
+        FirstName:FirstName,
+        LastName:LastName,
+        dob:dob,
+        email:email,
+        gender:gender,
+        address:address,
+        phone:phone
+      };
+      localStorage.setItem("localData",JSON.stringify(userData));
+      alert("data save");}
+       </script>
+
+    </body>
+   
+</html>
