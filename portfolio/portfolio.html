@@ -10,24 +10,54 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "yaiI5-y8yuG_0FutR",
+      });
+   })();
+</script>
+<script>
+ function sendEmail(e)
+{
+e.preventDefault();
+ let currentTime = new Date().toLocaleString();
+let params={
+    title: "New Message From Portfolio ", 
+    name: document.getElementById("user_name").value,
+    time :currentTime,
+    email: document.getElementById("user_email").value,
+    message: document.getElementById("user_message").value,
+ 
+ }
+ emailjs.send("service_ek9pl8z","template_rrzjk3s",params).then((response) => { alert(" Email Sent Successfully");
+ document.getElementById("form-id").reset();
+      },
+  (error) => { alert(" Failed: " + JSON.stringify(error)); })
+
+ }
+</script>
   <body>
-   
     <div class="blob blob-purple"></div>
     <div class="blob blob-cyan"></div>
 
     <nav class="navbar">
-      <div class="container">
-        <h1 class="logo">Adil Mehmood</h1>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-
+  <div class="container">
+    <h1 class="logo" id="name">Adil Mehmood</h1>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">☰</label>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
     <section class="hero">
       <img src="profile.jpeg" alt="Adil Mehmood" class="profile-pic" />
@@ -38,7 +68,6 @@
       <a href="#projects" class="btn">View My Work</a>
     </section>
 
-
     <section id="about" class="section">
       <h3 class="section-title">About Me</h3>
       <div class="card">
@@ -46,26 +75,25 @@
           I am Adil Mehmood, a passionate Full Stack Developer with expertise in
           React.js, .NET Framework, Python, MVC, and SQL. I love building
           modern, scalable, and user-friendly applications that solve real-world
-          problems.
+          problems. I recently completed my Bachelor's in Software Engineering and am currently seeking internship opportunities to apply and expand my technical skills.
         </p>
       </div>
     </section>
 
-   
     <section id="skills" class="section">
       <h3 class="section-title">Skills</h3>
       <div class="skills-grid">
-        <div class="skill-box">React.js</div>
-        <div class="skill-box">.NET Framework</div>
-        <div class="skill-box">Python</div>
+        <div class="skill-box">REACT JS</div>
+        <div class="skill-box">ASP.NET</div>
+        <div class="skill-box">PYTHON</div>
         <div class="skill-box">MVC</div>
         <div class="skill-box">SQL</div>
-        
-        <div class="skill-box">Firebase</div>
+        <div class="skill-box">HTML</div>
+        <div class="skill-box">CSS</div>
+        <div class="skill-box">JAVASCRIPT</div>
       </div>
     </section>
 
-  
     <section id="projects" class="section">
       <h3 class="section-title">Projects</h3>
       <div class="projects-grid">
@@ -111,7 +139,6 @@
       </div>
     </section>
 
-
     <section id="education" class="section">
       <h3 class="section-title">Education</h3>
       <div class="education-list">
@@ -135,29 +162,23 @@
       </div>
     </section>
 
-   
     <section id="contact" class="section">
       <h3 class="section-title">Contact Me</h3>
-      <form
-        class="contact-form"
-        action="mailto:your@email.com"
-        method="POST"
-      >
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
+      <form class="contact-form" id="form-id" onsubmit="sendEmail(event)" >
+        <input id="user_name" type="text" placeholder="Your Name" />
+        <input id="user_email" type="email" placeholder="Your Email" />
+        <textarea id="user_message" placeholder="Your Message" rows="4" ></textarea>
+        <button type="submit" class="btn" >Send Message</button>
       </form>
     </section>
 
-   
     <footer class="footer">
       <div class="social-links">
         <a href="https://www.linkedin.com/in/adil-mehmood-97bb85264/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://wa.me/+923456553698" target="_blank"><i class="fab fa-whatsapp"></i></a>
         <a href="mailto:adilmehmoodskt@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
-      <p>© 2025 Devolp with ♥️ All rights reserved.</p>
+      <p>© 2025 All rights reserved.Devolp with ❤️by Adil Mehmood</p>
     </footer>
   </body>
 </html>
